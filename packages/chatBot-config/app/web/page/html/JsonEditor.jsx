@@ -13,20 +13,20 @@ export default function JsonEditor(props){
   const handleEditorDidMount = (editor)=>{
     editorRef.current = editor;
   }
-  //   return <div>{JSON.stringify(props.data)}</div>
+  return <div>{JSON.stringify(props.data)}</div>
   //   return <Editor
   //     height="90vh"
   //     defaultLanguage="json"
   //     defaultValue={{text:'123'}}
   //     onMount={handleEditorDidMount}
   //   />
-  return <Editor
-    height="100%"
-    width="100%"
-    defaultLanguage="json"
-    defaultValue={props.data}
-    value={props.data}
-    onChange={props.onChange}
-    onMount={handleEditorDidMount}
-  />
+//   return <Editor
+//     height="100%"
+//     width="100%"
+//     defaultLanguage="json"
+//     defaultValue={props.data}
+//     value={props.data}
+//     onChange={props.onChange}
+//     onMount={handleEditorDidMount}
+//   />
 }
