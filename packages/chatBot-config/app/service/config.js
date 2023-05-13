@@ -33,6 +33,27 @@ module.exports = class ConfigService extends egg.Service {
       url: 'https://yuque.com/easy-team/egg-react'
     }
   }
+  getPromot({isGroup=false, groupName = ''}){
+    try {
+      const data = fs.readFileSync(__dirname+'/config.json');
+      const jsonData =  JSON.parse(data)
+      const {baseConfig,groupBaseConfig,groupConfig} = jsonData
+      let promt = ''
+      if(!isGroup){
+        promt = baseConfig.join(',')
+      }else{
+        promt = baseConfig.concat(groupBaseConfig).join(',')
+        if(groupConfig[groupName]){
+          promt += groupConfig[groupName].join(',')
+        }
+      }
+      console.log(isGroup,groupName,groupConfig[groupName])
+
+      return promt
+    } catch (err) {
+      return ''
+    }
+  }
 
   getConfigDetail(){
     try {

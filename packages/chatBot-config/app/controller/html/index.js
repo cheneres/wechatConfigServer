@@ -26,6 +26,16 @@ module.exports = (app) => {
       }
     }
 
+    async getPromot(){
+      const {ctx} = this
+      const config = ctx.service.config.getPromot(ctx.query)
+      ctx.body = {
+        data:config,
+        code:0,
+        success:true
+      }
+    }
+
     // async setConfig(){
     //   const {ctx} = this
     //   await ctx.service.config.setConfigDetail(ctx.body)

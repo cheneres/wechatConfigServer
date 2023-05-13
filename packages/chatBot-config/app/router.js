@@ -6,5 +6,7 @@ module.exports = app => {
   router.get('/configPage', controller.html.index.simple);
   router.get('/html(/.*)?', controller.html.index.spa);
   router.get('/api/getConfig', controller.html.index.getConfig);
+  router.get('/api/getPromot', controller.html.index.getPromot);
+
 
 };
